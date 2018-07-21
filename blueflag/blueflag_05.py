@@ -34,7 +34,7 @@ success_count = 0
 
 while True:
     random_index = randrange(len(order))
-    message, result = order[random_index]
+    message, button = order[random_index]
 
     print(">", message)
     user_input = input("> ")
@@ -45,7 +45,7 @@ while True:
 
         exit(0)
 
-    if not result == user_input.upper():
+    if not button == user_input.upper():
         print(success_count, "번 성공했네요.")
 
         break

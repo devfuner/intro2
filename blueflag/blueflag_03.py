@@ -31,14 +31,14 @@ while True:
     message = order_messages[random_index]
 
     print(">", message)
-    result = order[message]
+    button = order[message]
 
     user_input = input("> ")
 
     # 이 상태로는 게임을 무한히 해야 한다.
     # 게임을 그만하고 싶을 때는 어떻게 해야 할까?
 
-    if result == user_input.upper():
+    if button == user_input.upper():
         print("성공!")
     else:
         print("실패!")

@@ -39,7 +39,7 @@ print("> 게임이 시작합니다.")
 success_count = 0
 
 while True:
-    message, result = get_message_and_result()
+    message, button = get_message_and_result()
 
     print(">", message)
     user_input = input("> ")
@@ -50,7 +50,7 @@ while True:
 
         exit(0)
 
-    if not result == user_input.upper():
+    if not button == user_input.upper():
         print(success_count, "번 성공했네요.")
 
         break

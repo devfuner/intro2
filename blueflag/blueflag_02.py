@@ -20,45 +20,45 @@ print("+----------------------------------------------------------+")
 
 print("> 게임이 시작합니다.")
 
-result = "R"
+button = "R"
 print("> 청기 올려")
 
 user_input = input("> ")
 
-if result == user_input.upper():
+if button == user_input.upper():
     print("성공!")
 else:
     print("실패!")
 
 
-result = "F"
+button = "F"
 print("> 청기 내려")
 
 user_input = input("> ")
 
-if result == user_input.upper():
+if button == user_input.upper():
     print("성공!")
 else:
     print("실패!")
 
 
-result = "U"
+button = "U"
 print("> 백기 올려")
 
 user_input = input("> ")
 
-if result == user_input.upper():
+if button == user_input.upper():
     print("성공!")
 else:
     print("실패!")
 
 
-result = "J"
+button = "J"
 print("> 백기 내려")
 
 user_input = input("> ")
 
-if result == user_input.upper():
+if button == user_input.upper():
     print("성공!")
 else:
     print("실패!")
