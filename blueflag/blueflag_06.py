@@ -2,6 +2,11 @@ from random import randrange
 
 
 def get_message_and_result():
+    """
+    무작위 값을 튜플로 반환하는 함수이다.
+
+    :return: tuple
+    """
     order = [("청기 올려", "R"),
              ("청기 내려", "F"),
              ("청기 내리지말고 올려", "R"),
