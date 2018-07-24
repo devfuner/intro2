@@ -25,8 +25,8 @@
 12. 집합
 13. 모듈
 14. Class
-15. TDD
-- 파일 입출력
+15. 파일 입출력
+- TDD
 - 가변인자, 컨테이너 타입 Unpacking [링크](https://mingrammer.com/understanding-the-asterisk-of-python/)
 - tkinter [링크](https://076923.github.io/posts/Python-tkinter-1/)
 
