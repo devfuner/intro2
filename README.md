@@ -24,4 +24,22 @@
 11. 함수
 12. 집합
 13. 모듈
-14. TDD
+14. Class
+15. TDD
+- 파일 입출력
+- 가변인자, 컨테이너 타입 Unpacking [링크](https://mingrammer.com/understanding-the-asterisk-of-python/)
+- tkinter [링크](https://076923.github.io/posts/Python-tkinter-1/)
+
+---
+
+### 프로그램 목록
+1. 야구게임 (1장 ~ 8장)  
+2. 청기백기 (9장 ~ 11장)
+이메일 보내기  
+행맨  
+암호 만들기  
+
+---
+
+참고 사이트  
+[The Python Standard Library](https://docs.python.org/3/library/)
