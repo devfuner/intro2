@@ -1,8 +1,16 @@
 """
-- 사용자가 선택한 칸의 주변 지뢰 갯수 표시하기
+- 사용자 입력을 조금 더 편하게 하기
+- 지뢰가 있는 매트릭스와 화면에 보여주는 매트릭스 분리하기
+
 """
 import sys
 
+
+result_matrix = [['+', '+', '+', '+', '+'],
+                 ['+', '+', '+', '+', '+'],
+                 ['+', '+', '+', '+', '+'],
+                 ['+', '+', '+', '+', '+'],
+                 ['+', '+', '+', '+', '+']]
 
 mine_matrix = [['.', '.', '.', '*', '.'],
                ['.', '*', '.', '.', '.'],
@@ -48,6 +56,8 @@ def mine_counter(row_index, column_index):
                 # print(matrix[i][j], end="")
                 if mine_matrix[i][j] == '*':
                     mine_count = mine_count + 1
+                else:
+                    result_matrix[i][j] = '.'
         # print()
     return mine_count
 
@@ -56,7 +66,7 @@ def mine_counter(row_index, column_index):
 def view_matrix():
     for i in range(matrix_i_length):
         for j in range(matrix_j_length):
-            print("{0:>2}".format(mine_matrix[i][j]), end="")
+            print("{0:>2}".format(result_matrix[i][j]), end="")
         print()
 
 
@@ -64,6 +74,13 @@ def end_game(user_input):
     if 'Q' == user_input.upper():
         print("게임을 그만합니다.")
         sys.exit(0)
+
+
+def get_row_and_column(index):
+    index = index - 1
+    row = index // matrix_i_length
+    column = index % matrix_i_length
+    return row, column
 
 
 def main():
@@ -74,12 +91,11 @@ def main():
 
         end_game(user_input)
 
-        i, j = user_input.split()
-        i = int(i)
-        j = int(j)
-        print('i', i, 'j', j)
+        # print("user_input :", user_input)
+        i, j = get_row_and_column(int(user_input))
+        # print('i', i, 'j', j)
         mine_count = mine_counter(i, j)
-        mine_matrix[i][j] = mine_count
+        result_matrix[i][j] = mine_count
 
         if mine_count == '*':
             view_matrix()

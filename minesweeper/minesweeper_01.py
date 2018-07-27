@@ -1,12 +1,14 @@
+"""
+마인매트릭스를 전체를 돌면서 주변의 지뢰갯수를 설정
+"""
+mine_matrix = [['-', '-', '-', '*', '-'],
+               ['-', '*', '-', '-', '-'],
+               ['-', '-', '-', '-', '*'],
+               ['-', '*', '-', '-', '-'],
+               ['-', '-', '*', '-', '-']]
 
-matrix = [['-', '-', '-', '*', '-'],
-          ['-', '*', '-', '-', '-'],
-          ['-', '-', '-', '-', '*'],
-          ['-', '*', '-', '-', '-'],
-          ['-', '-', '*', '-', '-']]
-
-matrix_i_length = len(matrix)
-matrix_j_length = len(matrix[0])
+matrix_i_length = len(mine_matrix)
+matrix_j_length = len(mine_matrix[0])
 
 
 def mine_counter(row_index, column_index):
@@ -24,7 +26,7 @@ def mine_counter(row_index, column_index):
     """
 
     # 확인하려는 인덱스의 값이 지뢰일때는 바로 반환
-    if matrix[row_index][column_index] == '*':
+    if mine_matrix[row_index][column_index] == '*':
         return '*'
 
     # 확인할 인덱스 생성
@@ -41,20 +43,27 @@ def mine_counter(row_index, column_index):
             if 0 <= i < matrix_i_length and 0 <= j < matrix_j_length:
                 # print("(", i, j, ")", end=", ")
                 # print(matrix[i][j], end="")
-                if matrix[i][j] == '*':
+                if mine_matrix[i][j] == '*':
                     mine_count = mine_count + 1
         # print()
     return mine_count
 
 
+# 지뢰 출력
+print("설정전")
+for i in range(matrix_i_length):
+    for j in range(matrix_j_length):
+        print("{0:>2}".format(mine_matrix[i][j]), end="")
+    print()
+
 # 지뢰 갯수 찾아서 설정
 for i in range(matrix_i_length):
     for j in range(matrix_j_length):
-        matrix[i][j] = mine_counter(i, j)
-
+        mine_matrix[i][j] = mine_counter(i, j)
 
 # 지뢰 출력
+print("\n설정 후")
 for i in range(matrix_i_length):
     for j in range(matrix_j_length):
-        print("{0:>2}".format(matrix[i][j]), end="")
+        print("{0:>2}".format(mine_matrix[i][j]), end="")
     print()
