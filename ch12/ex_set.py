@@ -47,8 +47,8 @@ print("교집합 intersection :", set4.intersection(set5))
 
 
 # 합집합
-print("교집합 | :", (set4 | set5))
-print("교집합 union :", set4.union(set5))
+print("합집합 | :", (set4 | set5))
+print("합집합 union :", set4.union(set5))
 
 
 # 차집합
