@@ -75,3 +75,32 @@ with open('datas.txt', 'r') as f:
 ```
 
 with문은 close()를 자동으로 실행해 준다.
+
+
+파일 또는 디렉토리가 있는지 없는지 확인하기
+```python
+import os
+
+# file
+file_exists = os.path.exists('datas.txt')
+print(file_exists)
+
+# dir
+dir_exists = os.path.exists('../ch15')
+print(dir_exists)
+```
+
+
+파일인지 디렉토리인지 확인하기
+```python
+import os
+
+# file
+is_file = os.path.isfile('datas.txt')
+print(is_file)
+
+# dir
+is_dir = os.path.isdir('D:\PycharmProjects\intro2\ch15')
+print(is_dir)
+
+```
